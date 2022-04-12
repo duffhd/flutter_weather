@@ -9,8 +9,8 @@ class GradientUtil {
 
   static const _defaultGradient = LinearGradient(colors: [Colors.white70]);
 
-  static LinearGradient getGradiant(Weather weather, double? temperature) {
-    if(temperature == null) {
+  static LinearGradient getGradiant(Weather? weather, double? temperature) {
+    if(temperature == null || weather == null) {
       return _defaultGradient;
     }
 
@@ -27,10 +27,10 @@ class GradientUtil {
 
   static Color _weatherColor(Weather weather) {
     switch (weather) {
+      case Weather.rain:
       case Weather.thunderstorm:
         return WeatherColors.thunderstorm;
       case Weather.drizzle:
-      case Weather.rain:
       case Weather.snow:
       case Weather.mist:
       case Weather.smoke:
