@@ -9,7 +9,7 @@ import '../dto/current_weather_dto.dart';
 import '../dto/location_dto.dart';
 
 class WeatherRepository {
-  static Future<CurrentWeatherDto> getCurrentWeather(Coordinates location) async {
+  Future<CurrentWeatherDto> getCurrentWeather(Coordinates location) async {
     var url = Uri.http(WeatherUrl.openWeatherUrl, WeatherUrl.currentWeather, {
       "lat": location.lat.toString(),
       "lon": location.lon.toString(),
@@ -22,7 +22,7 @@ class WeatherRepository {
     return CurrentWeatherDto.fromJson(decoded);
   }
 
-  static Future<LocationDto> getCityCoordinates(String cityName) async {
+  Future<LocationDto> getCityCoordinates(String cityName) async {
     var url = Uri.http(WeatherUrl.openWeatherUrl, WeatherUrl.geolocationApi,
         {"q": cityName, "appid": getApiKey()});
 
