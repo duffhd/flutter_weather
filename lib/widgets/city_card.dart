@@ -42,7 +42,6 @@ class CityCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(weatherInfo.name, style: WeatherTextStyle.biggerCardText),
-                const Icon(Icons.cloud)
               ],
             ),
             Column(
