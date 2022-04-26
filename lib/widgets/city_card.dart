@@ -35,25 +35,25 @@ class CityCard extends StatelessWidget {
                 EnumToString.fromString(
                     Weather.values, weatherInfo.weather[0].main),
                 weatherInfo.main.temp)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(weatherInfo.name, style: WeatherTextStyle.biggerCardText),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(weatherInfo.main.temp?.toDegrees() ?? "",
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                child: Text(weatherInfo.name,
                     style: WeatherTextStyle.biggerCardText),
-                Text(DateUtil.getDayMonth(),
-                    style: WeatherTextStyle.dateCardText)
-              ],
-            )
-          ],
+              ),
+              Column(
+                children: [
+                  Text(weatherInfo.main.temp?.toDegrees() ?? "",
+                      style: WeatherTextStyle.biggerCardText),
+                  Text(DateUtil.getDayMonth(),
+                      style: WeatherTextStyle.dateCardText)
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
