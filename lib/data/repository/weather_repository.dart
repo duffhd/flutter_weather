@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_weather/model/urls.dart';
+import 'package:flutter_weather/data/urls.dart';
 import 'package:http/http.dart' as http;
 
 import '../../util/api_key.dart';

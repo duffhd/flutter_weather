@@ -1,4 +1,4 @@
-import 'package:flutter_weather/model/repository/weather_repostiory.dart';
+import 'package:flutter_weather/data/repository/weather_repository.dart';
 import 'package:get/get.dart';
 
 import '../../widgets/city_card.dart';

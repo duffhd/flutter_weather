@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_weather/view/home/home_controller.dart';
 import 'package:get/get.dart';
 
-import '../../model/repository/weather_repostiory.dart';
+import '../../data/repository/weather_repository.dart';
 import '../../widgets/input_dialog.dart';
 
 class HomeScreen extends StatefulWidget {

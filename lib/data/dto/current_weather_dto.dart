@@ -1,4 +1,4 @@
-import 'package:flutter_weather/model/dto/weather_dto.dart';
+import 'package:flutter_weather/data/dto/weather_dto.dart';
 
 import 'main_dto.dart';
 
