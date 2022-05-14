@@ -1,6 +1,6 @@
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_weather/model/dto/current_weather_dto.dart';
+import 'package:flutter_weather/data/dto/current_weather_dto.dart';
 import 'package:flutter_weather/util/weather.dart';
 
 import '../util/date.dart';
@@ -33,7 +33,7 @@ class CityCard extends StatelessWidget {
             ],
             gradient: GradientUtil.getGradiant(
                 EnumToString.fromString(
-                    Weather.values, weatherInfo.weather[0].main),
+                    Weather.values, weatherInfo.weather.first.main),
                 weatherInfo.main.temp)),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
