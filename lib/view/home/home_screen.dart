@@ -17,14 +17,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
         init: HomeController(weatherRepository: Get.put(WeatherRepository())),
-        builder: (_controller) {
+        builder: (controller) {
           return Scaffold(
             floatingActionButton: FloatingActionButton(
                 onPressed: () {
                   showDialog<String>(
                       context: context,
                       builder: (context) => const InputDialog())
-                      .then((value) => _controller.addCity(value));
+                      .then((value) => controller.addCity(value));
                 },
                 child: const Icon(Icons.add)),
             appBar: AppBar(title: const Text("Flutter Weather")),
@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Obx(() =>
                   Column(
-                      children: _controller.cityCards
+                      children: controller.cityCards
                   )
               ),
             ),
