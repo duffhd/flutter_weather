@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class InputDialog extends StatefulWidget {
   const InputDialog({Key? key}) : super(key: key);
@@ -14,17 +15,23 @@ class _InputDialogState extends State<InputDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text("Add your city"),
+      title: Text("add_city".tr),
       content: TextField(
-          controller: _inputController, onChanged: (String input) {
-        _cityName = input;
-      }),
+          decoration: InputDecoration(
+              hintText: "example_city".tr
+          ),
+          controller: _inputController,
+          onChanged: (String input) {
+            _cityName = input;
+          }),
       actions: [
-        TextButton(onPressed: () async {
-          if (_inputController.text.isNotEmpty) {
-            Navigator.pop(context, _cityName);
-          }
-        }, child: const Text("Search"))
+        TextButton(
+            onPressed: () async {
+              if (_inputController.text.isNotEmpty) {
+                Navigator.pop(context, _cityName);
+              }
+            },
+            child: Text("search".tr))
       ],
     );
   }
