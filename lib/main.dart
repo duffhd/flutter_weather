@@ -3,7 +3,7 @@ import 'package:flutter_weather/util/routes.dart';
 import 'package:flutter_weather/view/home/home_screen.dart';
 import 'package:get/get.dart';
 
-import 'app_strings.dart';
+import 'locale/app_strings.dart';
 
 void main() {
   runApp(const MyApp());
